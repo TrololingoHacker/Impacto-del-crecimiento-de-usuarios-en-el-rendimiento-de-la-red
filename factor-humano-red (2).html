@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El factor humano en la red | ITLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f6;--pa:#fff;--ink:#101828;--ld:#475467;--bl:#0a2fa0;--or:#e8590c;--se:'Fraunces',Georgia,serif;--sa:'Figtree',system-ui,sans-serif;--e:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#000;display:grid;place-items:center;overflow:hidden;font-family:var(--sa);color:var(--ink)}
+#st{container-type:size;width:min(100vw,177.78vh);height:min(56.25vw,100vh);background:var(--bg);position:relative;overflow:hidden}
+.s{position:absolute;inset:0 0 4.5cqw;opacity:0;visibility:hidden;transform:translateY(2cqw);transition:opacity .7s var(--e),transform .7s var(--e),visibility .7s}
+.s.on{opacity:1;visibility:visible;transform:none;z-index:2}
+.b{height:100%;padding:4cqw 6cqw;display:grid;gap:5cqw;align-items:center}
+.g2{grid-template-columns:1fr 1fr}.g55{grid-template-columns:11fr 9fr}.g46{grid-template-columns:4fr 6fr}
+.ctr{justify-items:center;align-content:center;text-align:center}
+.col{display:flex;flex-direction:column;justify-content:center}
+.dk{background:var(--bl);color:#fff}.dk h1,.dk h2,.dk p,.dk strong{color:#fff}.dk p{opacity:.9}
+h1,h2{font-family:var(--se);font-weight:700;margin:0 0 1.6cqw;letter-spacing:-.02em;line-height:1.08}
+h1{font-size:5cqw}h2{font-size:3.7cqw}
+h4{font:700 1.9cqw var(--se);margin:0 0 .6cqw}
+p{font-size:1.7cqw;line-height:1.55;color:var(--ld);margin:0 0 1.4cqw}
+p.l{font:italic 400 2.1cqw/1.45 var(--se);color:var(--ink)}
+strong{color:var(--ink)}
+.k{font-size:1.35cqw;font-weight:700;color:var(--bl);margin:0 0 1.2cqw;display:inline-block;border-left:.4cqw solid var(--or);padding-left:1cqw}
+.dk .k{color:#fff}
+.hl{box-shadow:inset 0 -.9cqw rgba(232,89,12,.28)}
+.big{font:700 11cqw/1 var(--se);color:var(--or);letter-spacing:-.04em}
+.row{display:grid;gap:2cqw;width:100%}.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}.c5{grid-template-columns:repeat(5,1fr)}.c2{grid-template-columns:1fr 1fr}
+.it{border-left:.35cqw solid var(--bl);padding:.2cqw 0 .2cqw 1.6cqw;text-align:left}.it p{font-size:1.45cqw;margin:0}.it.o{border-color:var(--or)}
+.pn{background:var(--pa);padding:2.4cqw;box-shadow:0 .6cqw 3cqw rgba(16,24,40,.08)}
+.pn.dk{background:var(--bl)}
+.tier{padding:1.5cqw 2cqw;color:#fff;text-align:center;margin:0 auto .8cqw}.tier b{display:block;font:700 1.9cqw var(--se)}.tier span{font-size:1.3cqw;opacity:.9}
+svg{width:100%;height:auto;display:block}
+svg text{font-family:var(--sa)}
+.ch{position:relative;display:flex;gap:2.5cqw;height:21cqw;border-bottom:.2cqw solid var(--ink);margin:3cqw 0 5cqw;width:100%}
+.ch .cap{position:absolute;left:0;right:0;border-top:.25cqw dashed var(--or);z-index:3}
+.ch .cap span{position:absolute;right:0;bottom:.3cqw;font-size:1.25cqw;font-weight:700;color:var(--or)}
+.gr{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:.6cqw;position:relative}
+.gr>em{position:absolute;bottom:-2.8cqw;font-style:normal;font-size:1.3cqw;color:var(--ld);white-space:nowrap}
+.br{width:36%;height:0;background:var(--bl);position:relative;transition:height 1.1s var(--e) .4s}
+.br.x{background:var(--or)}.br.g{background:repeating-linear-gradient(45deg,rgba(10,47,160,.28),rgba(10,47,160,.28) .4cqw,transparent .4cqw,transparent .8cqw)}
+.br span{position:absolute;top:-2cqw;width:100%;text-align:center;font-size:1.3cqw;font-weight:700;color:var(--ink)}
+.s.on .br{height:calc(var(--h)*1%)}
+.term{background:#0b1220;color:#d6e2ff;font:1.35cqw/1.9 ui-monospace,Menlo,Consolas,monospace;padding:2cqw 2.4cqw;margin-top:1.6cqw}.term .ok{color:#6ee7a0}.term .w{color:#fbbf24}.term .bad{color:#fb7185}
+#ft{position:absolute;bottom:0;left:0;right:0;height:4.5cqw;background:var(--pa);display:flex;align-items:center;justify-content:space-between;padding:0 6cqw;font-size:1.15cqw;color:var(--ld);z-index:50}
+#pg{position:absolute;top:0;left:0;height:.3cqw;background:var(--or);width:0;transition:width .8s var(--e)}
+#ft b{color:var(--bl);font:700 1.5cqw var(--se)}#ft span+span{margin-left:3cqw;font-weight:700}
+#np{position:absolute;bottom:6cqw;right:2cqw;width:46cqw;background:rgba(16,24,40,.96);border-top:.4cqw solid var(--or);padding:2cqw 2.4cqw;z-index:100;opacity:0;visibility:hidden;transition:.3s}
+#np.show{opacity:1;visibility:visible}#np p{color:#fff;font-size:1.5cqw;margin:0}
+.nt{display:none}
+@keyframes up{from{opacity:0;transform:translateY(1.5cqw)}}
+.s.on .b>*{animation:up .9s var(--e) both;animation-delay:calc(var(--i,0)*.1s)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#0a2fa0,#101828)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bg{position:absolute;inset:0;z-index:0}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,18,70,.95) 20%,rgba(10,47,160,.78) 60%,rgba(10,47,160,.4))}
+.bg.u::after{background:rgba(8,30,120,.84)}
+.b{position:relative;z-index:1}.dk.tr{background:transparent}
+.s.on .zm{animation:kb 18s ease-out both}@keyframes kb{from{transform:scale(1.15)}}
+.pc{background:var(--pa);box-shadow:0 .6cqw 3cqw rgba(16,24,40,.1);text-align:left}.pc .ph{height:14cqw}.pc .t{padding:1.8cqw 2cqw}
+.fr{height:36cqw;padding:1.2cqw;background:#fff;box-shadow:0 1cqw 4cqw rgba(16,24,40,.18);transform:rotate(-1.2deg)}.fr .ph{height:100%}
+.s.on .br.m{height:0}.s.on .gr.rv .br.m{height:calc(var(--h)*1%)}
+.ln{opacity:0;transition:opacity .4s}.ln.sh{opacity:1}
+.btn{margin-top:1.6cqw;background:var(--or);color:#fff;border:0;font:700 1.5cqw var(--sa);padding:1.1cqw 2.2cqw;cursor:pointer}
+#ro{font:700 2.6cqw var(--se);text-align:center;min-height:4cqw;margin-bottom:.6cqw}
+.s{transform:translateX(calc(var(--d,1)*3cqw))}
+.bg.f::after{background:rgba(238,241,246,.88)}.bg.f img{filter:blur(4px) saturate(.8)}
+.s.on .row>*,.s.on .tier{animation:up .9s var(--e) both;animation-delay:calc(.4s + var(--j,0)*.15s)}
+.sc::before{content:"";position:absolute;top:0;bottom:0;width:.5cqw;background:linear-gradient(transparent,#ff9d5c,transparent);z-index:2;animation:sc 3s linear infinite}
+.sc::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,18,70,.85),transparent 70%)}
+.sc span{position:absolute;left:1.5cqw;bottom:1cqw;z-index:2;color:#fff;font:700 1.5cqw var(--se)}
+@keyframes sc{from{left:-2%}to{left:102%}}
+.ln2{height:.4cqw;background:var(--or);width:0}
+.s.on .b>.ln2{animation:up .9s var(--e) both,gw 2.4s var(--e) .6s forwards}@keyframes gw{to{width:60cqw}}
+.s.on .crowd path:not(:last-of-type){stroke-dasharray:420;stroke-dashoffset:420;animation:dw 2.4s var(--e) .5s forwards}@keyframes dw{to{stroke-dashoffset:0}}
+.fl{stroke-dasharray:7 7;animation:fl 1s linear infinite}@keyframes fl{to{stroke-dashoffset:-14}}
+.s.on .w{animation:wi 1s var(--e) both;animation-delay:calc(.15s + var(--k)*.07s)}.w{display:inline-block}
+@keyframes wi{from{opacity:0;transform:translateY(.6em);filter:blur(8px)}}
+#st.al::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:60;box-shadow:inset 0 0 9cqw rgba(232,89,12,.7);animation:al 1s ease-in-out 3}@keyframes al{50%{opacity:.15}}
+#dots{display:flex;gap:.8cqw;align-items:center}#dots i{width:.8cqw;height:.8cqw;border-radius:50%;background:#cfd6e4;cursor:pointer;transition:.4s}#dots i.a{background:var(--or);transform:scale(1.6)}
+.ctl{display:flex;gap:1cqw;justify-content:center}.ctl .btn{margin:0}
+</style></head><body>
+<div id="st">
+
+<section class="s on" data-v="Exposición conjunta"><div class="bg ph"><img class="zm" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80" alt="" onerror="this.remove()"></div><div class="b g55 dk tr">
+<div class="col"><h1>Impacto del crecimiento de usuarios en el rendimiento de la red</h1>
+<p class="l" style="color:#fff">Qué ocurre cuando una infraestructura tiene más demanda que capacidad instalada.</p>
+<div class="it" style="border-color:var(--or);margin-top:1.5cqw"><p style="font-size:1.25cqw;margin-bottom:.5cqw"><strong>John Marcos Perez Caceres</strong> (20252587) y <strong>Oliver Alexander Jaquez Duran</strong> (20260741)</p><p style="font-size:1.25cqw;margin-bottom:.5cqw">Redes de Datos III, 2026-C-3 · Prof. Ing. Luis Omar Decena Gomez</p><p style="font-size:1.25cqw;margin:0">CCNA 3: Módulo 9 (QoS), 10 (Administración) y 11 (Diseño)</p></div></div>
+<div><svg class="crowd" viewBox="0 0 400 300"></svg></div></div>
+<i class="nt">Bienvenidos. Mi compañero John Marcos y yo, Oliver Jaquez, hablaremos de un problema que va más allá de los cables: qué pasa cuando la red se llena de personas. Nos basamos en los módulos 9, 10 y 11 de CCNA 3 y cerraremos con una demostración real.</i></section>
+
+<section class="s" data-v="Oliver Alexander Jaquez Duran"><div class="b g2">
+<div class="fr"><div class="ph"><img class="zm" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80" alt="Oficina con empleados" onerror="this.remove()"></div></div>
+<div class="col"><div class="big">10 → <span class="cu" data-to="50">50</span></div><h2>Más personas, la misma tubería</h2>
+<p>Se compran computadoras y sillas, se conectan más cables a los mismos switches, pero <span class="hl">el ancho de banda y los enlaces internos siguen siendo los mismos.</span></p>
+<p>El resultado es humano: pantallas congeladas, descargas que no terminan y quejas de que "el internet no sirve".</p></div></div>
+<i class="nt">Imaginen que su empresa pasa de 10 a 50 empleados. Recursos Humanos compra laptops, pero TI sigue con el mismo router. Conectar más cables al switch no crea más internet; solo hace que más personas compitan por él.</i></section>
+
+<section class="s" data-v="Oliver Alexander Jaquez Duran"><div class="b ctr">
+<div><h2>No importa cuántos están conectados, sino qué hacen</h2><p class="l">Cincuenta personas leyendo correo pasan inadvertidas. El problema es el tráfico pesado simultáneo.</p></div>
+<div class="row c3">
+<div class="pc"><div class="ph"><img class="zm" src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Videollamada" onerror="this.remove()"></div><div class="t"><h4>Videollamada</h4><p style="font-size:1.45cqw;margin:0">Flujo constante que no tolera retrasos. Si falla, se rompe la conversación.</p></div></div>
+<div class="pc"><div class="ph"><img class="zm" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Backups" onerror="this.remove()"></div><div class="t"><h4>Backups</h4><p style="font-size:1.45cqw;margin:0">Camiones pesados en la autopista. Sin horario de madrugada, aplastan al resto.</p></div></div>
+<div class="pc"><div class="ph"><img class="zm" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="ERP y bases de datos" onerror="this.remove()"></div><div class="t"><h4>ERP y bases de datos</h4><p style="font-size:1.45cqw;margin:0">Consultas continuas que exigen fiabilidad absoluta.</p></div></div></div></div>
+<i class="nt">No todos consumen igual. Si 50 personas leen correos, la red ni lo nota. El caos llega cuando 20 entran a una videollamada de Teams y a la vez el servidor sube un backup a la nube: comportamientos distintos chocando en el mismo cable.</i></section>
+
+<section class="s" data-v="Oliver Alexander Jaquez Duran"><div class="b g55">
+<div class="col"><h2>El culpable rara vez es el proveedor de Internet</h2>
+<p>El instinto es culpar a la telecom. Pero el bloqueo suele estar en casa: un <strong>cuello de botella interno</strong>.</p>
+<div class="it o"><p>Tres equipos envían a 1 Gbps hacia un switch, pero el enlace de ese switch al router solo soporta 100 Mbps. El tráfico se acumula y los paquetes se pierden.</p></div></div>
+<div class="pn"><svg viewBox="0 0 400 270">
+<path d="M45 60Q190 60 190 135M45 135H190M45 210Q190 210 190 135" fill="none" stroke="#0a2fa0" stroke-opacity=".35" stroke-width="6"/>
+<g fill="#0a2fa0"><circle cx="45" cy="60" r="13"/><circle cx="45" cy="135" r="13"/><circle cx="45" cy="210" r="13"/></g>
+<text x="20" y="250" font-size="13" fill="#475467">3 equipos × 1000 Mbps</text>
+<circle cx="190" cy="135" r="26" fill="#fff" stroke="#0a2fa0" stroke-width="4"/><text x="190" y="140" text-anchor="middle" font-size="12" font-weight="700" fill="#0a2fa0">Switch</text>
+<path d="M216 135H345" stroke="#e8590c" stroke-width="9" stroke-dasharray="12 6"/>
+<text x="280" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#e8590c">100 Mbps</text>
+<circle cx="360" cy="135" r="15" fill="#101828"/><text x="360" y="175" text-anchor="middle" font-size="12" fill="#475467">Router</text><g fill="#fff" stroke="#0a2fa0" stroke-width="2"><circle r="5"><animateMotion dur="1.6s" begin="0s" repeatCount="indefinite" path="M45 60Q190 60 190 135"/></circle><circle r="5"><animateMotion dur="1.6s" begin="0.5s" repeatCount="indefinite" path="M45 135H190"/></circle><circle r="5"><animateMotion dur="1.6s" begin="1s" repeatCount="indefinite" path="M45 210Q190 210 190 135"/></circle><circle r="5"><animateMotion dur="1.6s" begin="0.8s" repeatCount="indefinite" path="M45 60Q190 60 190 135"/></circle><circle r="5"><animateMotion dur="1.6s" begin="0.2s" repeatCount="indefinite" path="M45 210Q190 210 190 135"/></circle></g><circle r="5" fill="#e8590c"><animateMotion dur="3.4s" repeatCount="indefinite" path="M216 135H345"/></circle><circle r="5" fill="#e8590c"><animateMotion dur="3.4s" begin="1.7s" repeatCount="indefinite" path="M216 135H345"/></circle><circle cx="200" cy="108" r="5" fill="#e8590c"><animate attributeName="cy" values="108;60" dur="1.6s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.6s" begin="0s" repeatCount="indefinite"/></circle><circle cx="215" cy="108" r="5" fill="#e8590c"><animate attributeName="cy" values="108;60" dur="1.6s" begin="0.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.6s" begin="0.6s" repeatCount="indefinite"/></circle><circle cx="230" cy="108" r="5" fill="#e8590c"><animate attributeName="cy" values="108;60" dur="1.6s" begin="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0" dur="1.6s" begin="1.1s" repeatCount="indefinite"/></circle><text x="262" y="48" font-size="12" font-weight="700" fill="#e8590c">paquetes perdidos</text></svg></div></div>
+<i class="nt">Aquí el usuario dice "el internet de esta empresa no sirve". Pero el problema suele estar adentro: si tres personas mandan archivos pesados por un switch conectado al router con un enlace de 100 megas, el choque es inminente.</i></section>
+
+<section class="s" data-v="Oliver Alexander Jaquez Duran"><div class="b ctr">
+<div><span class="k">Módulo 10: Administración de redes</span><h2>No se puede arreglar lo que no se ve</h2><p class="l">Para medir la congestión, la red tiene que hablarnos.</p></div><div class="ph sc" style="width:100%;height:10cqw"><img class="zm" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80" alt="Panel de monitoreo" onerror="this.remove()"><span>Monitoreo en tiempo real</span></div>
+<div class="row c4">
+<div class="it"><h4>CDP y LLDP</h4><p>Dibujan el mapa: qué equipo está en qué puerto, sin seguir cables a mano.</p></div>
+<div class="it"><h4>SNMP</h4><p>El pulso de la red. Avisa cuando un enlace llega al 99% de uso.</p></div>
+<div class="it"><h4>Syslog</h4><p>El diario del router: cada falla, caída o alerta de seguridad.</p></div>
+<div class="it"><h4>NTP</h4><p>Relojes sincronizados para saber a qué hora ocurrió el colapso.</p></div></div></div>
+<i class="nt">El módulo 10 nos enseña que no podemos arreglar lo que no vemos. SNMP no acelera la red, pero nos dice qué interfaz se está ahogando. Syslog y NTP nos dicen el minuto exacto. Le dan voz a la infraestructura.</i></section>
+
+<section class="s" data-v="Oliver Alexander Jaquez Duran"><div class="b g2">
+<div class="col"><span class="k">Módulo 11: Diseño de red</span><h2>Diseñar para crecer por bloques</h2>
+<p>Con la arquitectura jerárquica de Cisco, 20 empleados nuevos significan un switch más en la capa de acceso, sin reconstruir el núcleo.</p><div class="ph" style="height:13cqw;margin-top:1cqw"><img class="zm" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80" alt="Cableado de red" onerror="this.remove()"></div></div>
+<div>
+<div class="tier" style="background:#101828;width:60%"><b>Núcleo</b><span>Mueve datos a máxima velocidad, sin reglas complejas</span></div>
+<div class="tier" style="background:#0a2fa0;width:80%"><b>Distribución</b><span>Aplica políticas y contiene los problemas locales</span></div>
+<div class="tier" style="background:#e8590c;width:100%"><b>Acceso</b><span>Donde la tecnología toca a las personas</span></div></div></div>
+<i class="nt">Por eso el módulo 11 insiste en el diseño jerárquico. Si la empresa contrata a 20 personas, añadimos un switch en Acceso y no tocamos la columna vertebral. Son bloques de Lego que crecen sin romper el resto.</i></section>
+
+<section class="s" data-v="Oliver Alexander Jaquez Duran"><div class="b g2">
+<div class="col"><h2>El crecimiento sin plan se vuelve el enemigo</h2>
+<p>Switches domésticos en cascada, enlaces saturados a diario y cero visibilidad. Un diseño modular ayuda, pero <strong>una buena arquitectura no elimina los límites físicos de los cables.</strong></p>
+<p class="l">¿Cómo se mide ese límite? Le paso la palabra a John Marcos.</p></div>
+<div class="col"><div class="ph" style="height:19cqw;margin-bottom:2cqw"><img class="zm" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Equipo trabajando" onerror="this.remove()"></div><div class="row c2">
+<div class="it o"><h4>Sin plan</h4><p>Cascada de switches, saturación diaria, red a ciegas.</p></div>
+<div class="it"><h4>Con diseño modular</h4><p>Crecimiento ordenado, problemas contenidos, medición posible.</p></div></div></div></div>
+<i class="nt">Conectar switches uno detrás de otro es una receta para el desastre; la arquitectura jerárquica salva a la empresa. Pero hasta el mejor diseño tiene límites físicos. ¿Cómo se miden? Dejo a John Marcos con los números y el laboratorio.</i></section>
+
+<section class="s" data-v="John Marcos Perez Caceres"><div class="bg ph f"><img class="" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80" alt="" onerror="this.remove()"></div><div class="b ctr">
+<div><h2>"Internet lento" tiene cinco traducciones</h2><p class="l">No basta con saber cuántos megas se contratan.</p></div>
+<div class="row c5">
+<div class="it"><h4>Ancho de banda</h4><p>El tamaño máximo teórico del tubo.</p></div>
+<div class="it"><h4>Throughput</h4><p>El agua que realmente pasa ahora mismo.</p></div>
+<div class="it"><h4>Latencia</h4><p>Lo que tarda una gota en ir de extremo a extremo.</p></div>
+<div class="it"><h4>Jitter</h4><p>Gotas que llegan sin ritmo y destrozan las videollamadas.</p></div>
+<div class="it o"><h4>Pérdida de paquetes</h4><p>El tubo está tan lleno que el router descarta datos.</p></div></div></div>
+<i class="nt">Es común que una empresa pague un internet carísimo y los usuarios sigan quejándose, porque confunden ancho de banda con throughput. Si los routers botan paquetes por saturación, la llamada se corta sin importar cuántos megas se paguen.</i></section>
+
+<section class="s" data-v="John Marcos Perez Caceres"><div class="b g2">
+<div class="col"><h2>Cuando la demanda supera a la física</h2>
+<p>Nuestro enlace tiene una capacidad estricta de <strong>20 Mbps</strong>. Cada usuario activo quiere transmitir <strong>8 Mbps</strong> a la vez.</p>
+<p>Con uno y dos usuarios cabe. Desde el tercero, la suma pide más de lo que el tubo puede dar.</p></div>
+<div class="col"><div class="pn" style="padding:1cqw"><canvas id="cv" width="1000" height="440" style="width:100%;display:block"></canvas></div>
+<div class="row c3" style="margin:1.6cqw 0"><div class="it"><h4 id="sd">8</h4><p>Mbps demandados</p></div><div class="it"><h4 id="se">8</h4><p>Mbps entregados</p></div><div class="it o"><h4 id="sp" style="color:var(--or)">0%</h4><p>paquetes perdidos</p></div></div>
+<div class="ctl"><button class="btn" onclick="chg(-1)">− usuario</button><button class="btn" onclick="chg(1)">+ usuario</button></div>
+<p style="font-size:1.15cqw;text-align:center;margin:1cqw 0 0">Simulación del modelo (20 Mbps). En el laboratorio medimos 19.4 y 19.5 Mbps. Teclas ↑ ↓</p></div></div>
+<i class="nt">Observen la gráfica. Uno y dos usuarios caben bajo la línea naranja de 20 megas. Cuando entran el tercero y el cuarto, la suma supera físicamente el tubo y el equipo empieza a descartar información. Ahí entra el módulo 9.</i></section>
+
+<section class="s" data-v="John Marcos Perez Caceres"><div class="b g2">
+<div class="col"><span class="k">Módulo 9: QoS</span><h2>Administrar la escasez, no inventar ancho de banda</h2>
+<p class="l">"Si el tubo está lleno, pausa la descarga y deja pasar el audio de la videollamada del director."</p><div class="ph" style="height:13cqw"><img class="zm" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=900&q=80" alt="Videollamada" onerror="this.remove()"></div></div>
+<div class="col">
+<div class="it" style="margin-bottom:2cqw"><h4>QoS</h4><p>Prioriza el tráfico crítico cuando hay congestión.</p></div>
+<div class="it" style="margin-bottom:2cqw"><h4>Traffic shaping</h4><p>Retiene y suaviza el tráfico para que no golpee el enlace de golpe.</p></div>
+<div class="it o"><h4>Policing</h4><p>Descarta o remarca el tráfico que excede el límite configurado.</p></div></div></div>
+<i class="nt">QoS es como el policía de tránsito. No construye avenidas, pero cuando hay tapón decide que la ambulancia (la voz) pasa primero y los camiones de carga (las descargas) esperan a la derecha. Gestiona la escasez.</i></section>
+
+<section class="s" data-v="John Marcos Perez Caceres"><div class="bg ph f"><img class="" src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=1400&q=80" alt="" onerror="this.remove()"></div><div class="b ctr">
+<h2 style="max-width:62cqw">Subir los "megas" debe ser la última opción, no la primera</h2><div class="ln2"></div>
+<div class="row c4">
+<div class="pn"><div class="big" style="font-size:4cqw">1</div><h4>Medir</h4><p style="font-size:1.4cqw;margin:0">SNMP para ubicar el bloqueo físico.</p></div>
+<div class="pn"><div class="big" style="font-size:4cqw">2</div><h4>Analizar</h4><p style="font-size:1.4cqw;margin:0">Qué aplicaciones usan realmente las personas.</p></div>
+<div class="pn"><div class="big" style="font-size:4cqw">3</div><h4>Optimizar</h4><p style="font-size:1.4cqw;margin:0">QoS para proteger el tráfico crítico.</p></div>
+<div class="pn dk"><div class="big" style="font-size:4cqw;color:#fff">4</div><h4 style="color:#fff">Ampliar</h4><p style="font-size:1.4cqw;margin:0">Ahora sí: mejores switches o más ancho de banda.</p></div></div></div>
+<i class="nt">Muchos gerentes gastan miles de dólares duplicando el internet y descubren que sigue lento, porque el cuello de botella era un switch interno viejo. Un ingeniero primero mide, luego analiza, luego aplica QoS, y solo si la física no da para más, amplía.</i></section>
+
+<section class="s" data-v="John Marcos Perez Caceres"><div class="bg ph f"><img class="" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1400&q=80" alt="" onerror="this.remove()"></div><div class="b g2">
+<div class="col"><h2>Nuestra maqueta en PNETLab</h2>
+<p>Una topología aislada para comprobar la teoría con datos.</p>
+<div class="it" style="margin-bottom:1.6cqw"><h4>Ubuntu Server · 192.168.10.10</h4><p>Origen con <code>iperf3</code>. Su interfaz de salida está limitada a 20 Mbps.</p></div>
+<div class="it" style="margin-bottom:1.6cqw"><h4>Ubuntu Cliente · 192.168.10.21</h4><p>Destino: pide descargas simultáneas pesadas.</p></div>
+<div class="it"><h4>Switch y VPCS · .22 a .24</h4><p>Usuarios virtuales que solo generan pings de conectividad.</p></div></div>
+<div class="pn dk"><svg viewBox="0 0 500 360" fill="none" stroke="#fff" stroke-width="2">
+<rect x="20" y="100" width="130" height="80" fill="rgba(255,255,255,.1)"/><rect x="350" y="100" width="130" height="80" fill="rgba(255,255,255,.1)"/><rect x="190" y="105" width="120" height="70" fill="#fff"/>
+<path class="fl" d="M150 140H190M310 140H350M250 175V240M110 240H390M110 240V280M250 240V280M390 240V280"/>
+<g fill="#fff" stroke="none" text-anchor="middle" font-size="14" font-weight="700"><text x="85" y="135">Ubuntu Server</text><text x="415" y="135">Ubuntu Cliente</text><text x="85" y="165" font-size="12" fill="#ffb98a">Límite 20 Mbps</text><text x="415" y="165" font-size="12">.21</text></g>
+<text x="250" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#0a2fa0" stroke="none">Switch Cisco</text>
+<g><circle cx="110" cy="300" r="22"/><circle cx="250" cy="300" r="22"/><circle cx="390" cy="300" r="22"/></g>
+<g fill="#fff" stroke="none" text-anchor="middle" font-size="11"><text x="110" y="304">VPCS .22</text><text x="250" y="304">VPCS .23</text><text x="390" y="304">VPCS .24</text></g><circle cx="150" cy="140" r="6" fill="#e8590c" stroke="none"><animate attributeName="r" values="5;12;5" dur="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.2;1" dur="1.4s" repeatCount="indefinite"/></circle></svg></div></div>
+<i class="nt">Este es el mapa de nuestra oficina virtual. Creamos un cuello de botella artificial en el servidor Ubuntu, limitado a 20 megas, y usamos el Ubuntu cliente para simular usuarios que descargan archivos, todo a través del switch Cisco central.</i></section>
+
+<section class="s" data-v="John Marcos Perez Caceres"><div class="b g2">
+<div class="col"><span class="k">Demostración en vivo con iperf3</span><h2>Con 4 usuarios, cada uno recibe 4.86 Mbps en vez de 8</h2>
+<p>Medimos la concurrencia progresiva: la demanda ideal contra el throughput real. <strong>La lentitud se reparte entre todos.</strong></p>
+<div class="term"><div class="ln"><span class="w">$</span> johnpos-demo 1 <span class="ok">[OK]</span></div><div class="ln"><span class="w">$</span> johnpos-demo 2 <span class="ok">[OK]</span></div><div class="ln"><span class="w">$</span> johnpos-demo 3 <span class="w">[CONGESTIÓN]</span></div><div class="ln"><span class="w">$</span> johnpos-demo 4 <span class="bad">[SATURADO]</span></div></div><button class="btn" onclick="demo()">▶ Ejecutar demostración (D)</button></div>
+<div class="col"><div class="ch" data-m="1"></div><div id="ro">Pulsa ▶ o la tecla D</div><p style="font-size:1.3cqw;text-align:center;margin:0">Rayado: demanda · Sólido: throughput total recibido (Mbps)</p></div></div>
+<i class="nt">Momento de la demostración. Cuando 4 usuarios, que suman 32 megas, intentan pasar por el tubo de 20, la red se queda en 19.5 y cada persona recibe solo 4.86 Mbps. Todos sufren. Voy a ejecutar los comandos ahora para verlo ocurrir en tiempo real.</i></section>
+
+<section class="s" data-v="Exposición conjunta"><div class="bg u ph"><img class="zm" src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=1600&q=80" alt="" onerror="this.remove()"></div><div class="b ctr dk tr"><div style="max-width:72cqw">
+<h2 style="font-size:4cqw">Las redes existen para servir a las personas, no al revés.</h2>
+<p style="font-size:1.8cqw">Conectar más cables no es una estrategia. Hay que administrar lo que no se ve, diseñar jerarquías que soporten el futuro y aplicar QoS cuando la física llega a su límite.</p>
+<p class="l" style="color:#fff;margin-top:3cqw">Muchas gracias. Quedamos atentos a sus preguntas.</p></div></div>
+<i class="nt">Concluimos: la tecnología solo tiene sentido cuando facilita el trabajo humano. Conectar cables es un oficio; diseñar, medir y administrar para que la red evolucione con la empresa es ingeniería. Gracias al profesor y a todos. ¿Preguntas?</i></section>
+
+<div id="ft"><div id="pg"></div><span><b>ITLA</b> &nbsp;Redes de Datos III</span><div id="dots"></div><div><span id="pv"></span><span id="ct"></span></div></div>
+<div id="np"><p id="nn"></p></div>
+</div>
+<script>
+const $=s=>[...document.querySelectorAll(s)],S=$('.s'),G=id=>document.getElementById(id);let i=0;
+$('.crowd').forEach(v=>{let h='';for(let k=0;k<14;k++){const y=22+k*19.5,x=22+k%3*24;h+=`<path d="M${x} ${y}C190 ${y} 200 150 290 150" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="3"/><circle cx="${x}" cy="${y}" r="7" fill="#fff"/>`}
+v.innerHTML=h.replace(/#fff/g,v.closest('.pn')?'#0a2fa0':'#fff')+'<path d="M290 150H375" stroke="#e8590c" stroke-width="10" stroke-dasharray="14 7"/><circle cx="378" cy="150" r="11" fill="#e8590c"/><text x="290" y="185" font-size="13" fill="#e8590c" font-weight="700" text-anchor="middle">una sola salida</text>'});
+$('.ch').forEach(c=>{const m=c.dataset.m=='1',D=[[1,8,8],[2,16,16],[3,24,19.4],[4,32,19.5]],f=v=>v/35*100;
+c.innerHTML=`<div class="cap" style="bottom:${f(20)}%"><span>Capacidad 20 Mbps</span></div>`+D.map(r=>`<div class="gr"><div class="br ${m?'g':r[1]>20?'x':''}" style="--h:${f(r[1])}"><span>${r[1]}</span></div>${m?`<div class="br m ${r[2]<r[1]?'x':''}" style="--h:${f(r[2])}"><span>${r[2]}</span></div>`:''}<em>${r[0]} usuario${r[0]>1?'s':''}</em></div>`).join('')});
+$('.row').forEach(r=>[...r.children].forEach((e,k)=>e.style.setProperty('--j',k)));$('.tier').forEach((e,k)=>e.style.setProperty('--j',2-k));$('h1,h2').forEach(h=>{if(h.children.length)return;h.innerHTML=h.textContent.split(' ').map((w,k)=>`<span class="w" style="--k:${k}">${w}</span>`).join(' ')});S.forEach((_,k)=>{const d=document.createElement('i');d.onclick=()=>go(k);G('dots').append(d)});$('.b').forEach(p=>[...p.children].forEach((e,k)=>e.style.setProperty('--i',k)));
+function go(n){G('st').style.setProperty('--d',n>=i?1:-1);i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('on',k==i));G('pv').textContent='Voz: '+S[i].dataset.v;G('ct').textContent=String(i+1).padStart(2,'0')+' / '+S.length;G('pg').style.width=(i+1)/S.length*100+'%';$('#dots i').forEach((d,k)=>d.classList.toggle('a',k==i));G('nn').textContent=S[i].querySelector('.nt').textContent;S[i].querySelectorAll('.cu').forEach(el=>{const t=+el.dataset.to,t0=performance.now();(function f(n){const q=Math.min(1,(n-t0)/1800);el.textContent=Math.round(10+(t-10)*(1-Math.pow(1-q,3)));q<1&&requestAnimationFrame(f)})(t0)});if(i==8)startSim();else{auto.forEach(clearTimeout);auto=[]}try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+addEventListener('keydown',e=>{const k=e.key;if(['ArrowRight',' ','PageDown'].includes(k)){e.preventDefault();go(i+1)}else if(['ArrowLeft','PageUp'].includes(k))go(i-1);else if(i==8&&(k=='ArrowUp'||k=='+'))chg(1);else if(i==8&&(k=='ArrowDown'||k=='-'))chg(-1);else if(k=='Home')go(0);else if(k=='End')go(S.length-1);else if(k.toLowerCase()=='f')document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen().catch(()=>{});else if(k.toLowerCase()=='d')demo();else if(k.toLowerCase()=='n')G('np').classList.toggle('show')});
+let tx=0;addEventListener('touchstart',e=>tx=e.touches[0].clientX);addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)go(i+(d<0?1:-1))});
+const cv=G('cv'),cx=cv.getContext('2d'),UY=[70,170,270,370];let nu=1,P=[],bk=3,lt=0,ac=[0,0,0,0],auto=[];
+function setU(n){nu=Math.max(1,Math.min(4,n));G('sd').textContent=nu*8;G('se').textContent=Math.min(20,nu*8);G('sp').textContent=Math.round(Math.max(0,1-20/(nu*8))*100)+'%'}
+function chg(d){auto.forEach(clearTimeout);auto=[];setU(nu+d)}
+function startSim(){auto.forEach(clearTimeout);auto=[];P=[];setU(1);[1,2,3].forEach(k=>auto.push(setTimeout(()=>setU(k+1),k*3200)))}
+function draw(t){requestAnimationFrame(draw);if(i!=8)return;const dt=Math.min(.05,(t-lt)/1000||0);lt=t;bk=Math.min(4,bk+40*dt);
+for(let u=0;u<nu;u++){ac[u]+=16*dt;while(ac[u]>=1){ac[u]--;P.push({u,t:Math.random()*.1,s:0})}}
+cx.clearRect(0,0,1000,440);cx.fillStyle='rgba(10,47,160,.08)';cx.beginPath();cx.moveTo(300,20);cx.lineTo(500,198);cx.lineTo(500,242);cx.lineTo(300,420);cx.fill();
+cx.fillStyle='#e8590c';cx.fillRect(500,206,380,4);cx.fillRect(500,230,380,4);cx.textAlign='center';cx.font='700 24px sans-serif';cx.fillText('Enlace: 20 Mbps',690,188);
+cx.fillStyle='#101828';cx.beginPath();cx.arc(940,220,36,0,7);cx.fill();
+UY.forEach((y,u)=>{cx.globalAlpha=u<nu?1:.18;cx.fillStyle='#0a2fa0';cx.beginPath();cx.arc(50,y,24,0,7);cx.fill();cx.fillStyle='#fff';cx.font='700 18px sans-serif';cx.fillText('8',50,y+6)});
+P.forEach(q=>{let x,y,a=1;if(q.s==0){q.t+=dt/1.1;x=50+450*q.t;y=UY[q.u]+(220-UY[q.u])*q.t;if(q.t>=1){if(bk>=1){bk--;q.s=1;q.t=0}else{q.s=2;q.t=0}}}
+else if(q.s==1){q.t+=dt/.9;x=500+400*q.t;y=220}else{q.t+=dt/.6;x=500;y=220+q.t*160;a=1-q.t}
+cx.globalAlpha=Math.max(0,a);cx.fillStyle=q.s==2?'#e8590c':'#0a2fa0';cx.fillRect(x-8,y-5,16,10)});
+cx.globalAlpha=1;P=P.filter(q=>q.s==0||q.t<1)}
+requestAnimationFrame(draw);
+let dt=[];function demo(){dt.forEach(clearTimeout);dt=[];const d=S[12],L=d.querySelectorAll('.ln'),Gs=d.querySelectorAll('.gr');L.forEach(l=>l.classList.remove('sh'));Gs.forEach(g=>g.classList.remove('rv'));G('ro').textContent='Midiendo…';if(i!=12)go(12);
+[['8.0','#2f9e44'],['8.0','#2f9e44'],['≈6.47','#e8590c'],['4.86','#c92a2a']].forEach((u,k)=>dt.push(setTimeout(()=>{L[k].classList.add('sh');Gs[k].classList.add('rv');if(k==3){G('st').classList.add('al');setTimeout(()=>G('st').classList.remove('al'),3200)}G('ro').innerHTML=`${k+1} usuario${k?'s':''}: <span style="color:${u[1]}">${u[0]} Mbps</span> c/u`},k*1500+400)))}
+go((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>
